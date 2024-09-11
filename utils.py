@@ -5,6 +5,7 @@ def center_text(text:str,column_width:int) -> str:
 
     if (column_width > length):
         filler_length = (column_width - length) // 2  #integer division
-        result = "".ljust(filler_length) + text + "".rjust(filler_length)
+        filler_spaces = (" " * filler_length)
+        result = filler_spaces + text + filler_spaces
 
     return result
