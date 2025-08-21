@@ -9,7 +9,7 @@ def performAddition(num1:int, num2:int) -> None:
 
 def checkBMI(bmi:float) -> None:
     if bmi < 16:
-        print("Over Thinness")
+        print("Severe Thinness")
     elif bmi >= 16 and bmi < 17:
         print("moderate Thinness")
     elif bmi >= 17 and bmi < 18.5:
