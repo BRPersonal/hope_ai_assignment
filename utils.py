@@ -1,3 +1,5 @@
+from itertools import product
+
 def center_text(text:str,column_width:int) -> str:
 
     result = text
@@ -9,3 +11,6 @@ def center_text(text:str,column_width:int) -> str:
         result = filler_spaces + text + filler_spaces
 
     return result
+
+def generate_parameter_combinations(param_dict:dict) -> [dict] :
+    return [dict(zip(param_dict.keys(),combo)) for combo in product(*param_dict.values())]
