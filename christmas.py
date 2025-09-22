@@ -1,4 +1,4 @@
-from utils import *
+from utils.utils import *
 
 def print_christmas_tree(height:int) -> None:
     column_width = 2 * height + 1
