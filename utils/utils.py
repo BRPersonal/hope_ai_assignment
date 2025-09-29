@@ -1,3 +1,4 @@
+
 from itertools import product
 from sklearn.metrics import r2_score
 
@@ -50,5 +51,6 @@ def find_best_hyperparameters(param_dict, x_train, y_train, x_test, y_test,
         if r_score > max_r_score:
             max_r_score = r_score
             best_combo = combo.copy()
+            best_combo["regressor"] = regressor
     
     return best_combo
