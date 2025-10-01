@@ -14,11 +14,21 @@ for i in range(no_of_inputs):
     print(f"(Input #{i+1})\n----------------\n")
     age = int(input(f"Enter age:"))
     bmi = float(input("Enter Bmi:"))
-    children = int(input("Enter no>of children:"))
-    sex_male = bool(input("Is Male?:"))
-    smoker_yes = bool(input("Is smoker?:"))
+    children = int(input("Enter no. of children:"))
+    sex_male = True if input("Is Male(y/n)?:").lower() == "y" else False
+    smoker_yes = True if input("Is smoker(y/n)?:").lower() == "y" else False
     samples.append([age,bmi,children,sex_male,smoker_yes])
 
 result = loaded_model.predict(samples)
-print(f"result.shape={result.shape}")
-print(f"Predicted Insurance={result}")
+
+print("---------Insurance Predictions------------")
+for i in range(no_of_inputs):
+  print(f"""
+          age={samples[i][0]}, 
+          bmi={samples[i][1]}, 
+          children={samples[i][2]},
+          gender={"male" if samples[i][3] else "female"},
+          smoker={"yes" if samples[i][4] else "no"},
+          predictedInsurance={result[i]:.2f}
+         """
+        )
