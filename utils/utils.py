@@ -20,7 +20,7 @@ def center_text(text:str,column_width:int) -> str:
   stops when the shortest iterable is exhausted
   eg.,
   result = zip([1, 2, 3], ['a', 'b', 'c','d'])
-  list_result = list(zip([1, 2, 3], ['a', 'b', 'c']))
+  list_result = list(result)
   print(list_result)  # [(1, 'a'), (2, 'b'), (3, 'c')]
   similarly dict() will convert the result of zip() into dictionary
 
@@ -38,7 +38,7 @@ def center_text(text:str,column_width:int) -> str:
   param_dict.values() gives you: [[10, 50], [3, 5]]
   *param_dict.values() unpacks it to: [10, 50], [3, 5]
   product(*param_dict.values()) becomes: product([10, 50], [3, 5])
-  This generates all combinations: (10, 3), (10, 5), (50, 3), (50, 5)
+  This generates list of all combinations: [(10, 3), (10, 5), (50, 3), (50, 5)]
 """
 def generate_parameter_combinations(param_dict:dict) -> [dict] :
     return [dict(zip(param_dict.keys(),combo)) for combo in product(*param_dict.values())]
