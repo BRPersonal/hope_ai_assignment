@@ -16,7 +16,7 @@ def center_text(text:str,column_width:int) -> str:
     return result
 
 """
-  zip() takes two or more iterables and returns a zip object (an iterator) of tuples
+  zip() takes two or more iterables and returns a zip object (an iterable) of tuples
   stops when the shortest iterable is exhausted
   eg.,
   result = zip([1, 2, 3], ['a', 'b', 'c','d'])
@@ -36,7 +36,7 @@ def center_text(text:str,column_width:int) -> str:
     'max_depth': [3, 5]
   }
   param_dict.values() gives you: [[10, 50], [3, 5]]
-  *param_dict.values() unpacks it to: [10, 50], [3, 5]
+  *param_dict.values() unpacks it to two arguments: [10, 50], [3, 5]
   product(*param_dict.values()) becomes: product([10, 50], [3, 5])
   This generates list of all combinations: [(10, 3), (10, 5), (50, 3), (50, 5)]
 """
